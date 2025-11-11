@@ -365,14 +365,14 @@ export function Header() {
                       size="sm"
                       className="hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 rounded-lg font-semibold transition-all border-[#4F6A8B]/30"
                     >
-                      🇸🇦 AR
+                      🇲🇦 AR
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
                       className="hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 rounded-lg font-semibold transition-all border-[#4F6A8B]/30"
                     >
-                      🇬🇧 EN
+                      🇺🇸 EN
                     </Button>
                     <Button
                       variant="outline"
