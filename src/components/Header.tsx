@@ -1,5 +1,4 @@
 'use client';
-
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -15,7 +14,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { ChevronDown, Globe, Menu } from 'lucide-react';
+import {
+  ChevronDown,
+  FileText, // ⚖️ Balança de juiz (Tradução Juramentada)
+  Globe,
+  Menu, // 🔧 Chave de fenda (Tradução Técnica)
+  Scale, // 📄 Papel (Tradução Simples)
+  Wrench, // 🔧 Chave de fenda (Tradução Técnica)
+} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from './ui/card';
@@ -80,7 +86,7 @@ export function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
-                className="w-72 bg-white/98 backdrop-blur-xl border-2 border-[#4F6A8B]/10 shadow-2xl rounded-2xl p-2 mt-2"
+                className="w-72 bg-linear-to-br from-white/45 to-[#F3EFB6]/55 backdrop-blur-xl border-2 border-[#4F6A8B]/10 shadow-2xl rounded-2xl p-2 mt-2"
               >
                 {/* Detalhe decorativo no dropdown */}
                 <div className="h-1 w-full bg-linear-to-r from-[#4F6A8B] via-[#BFCC2E] to-[#4F6A8B] rounded-t-xl mb-2"></div>
@@ -92,7 +98,7 @@ export function Header() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
-                        📄
+                        <FileText className="h-5 w-5 text-white" />
                       </div>
                       <div>
                         <p className="font-bold text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors">
@@ -111,7 +117,7 @@ export function Header() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
-                        🔧
+                        <Wrench className="h-5 w-5 text-white" />
                       </div>
                       <div>
                         <p className="font-bold text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors">
@@ -130,7 +136,7 @@ export function Header() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 transition-transform duration-300">
-                        ⚖️
+                        <Scale className="h-5 w-5 text-white" />
                       </div>
                       <div>
                         <p className="font-bold text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors">
@@ -149,7 +155,7 @@ export function Header() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#BFCC2E] to-[#a8b41f] flex items-center justify-center text-black font-bold text-sm group-hover:scale-110 transition-transform duration-300">
-                        🌍
+                        <Globe className="h-5 w-5 text-black" />
                       </div>
                       <div>
                         <p className="font-bold text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors">
@@ -376,11 +382,9 @@ export function Header() {
                     </Button>
                   </Link>
                 </SheetClose>
-
               </div>
             </SheetContent>
           </Sheet>
-
         </div>
       </nav>
     </Card>

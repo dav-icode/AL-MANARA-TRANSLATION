@@ -84,8 +84,8 @@ export const HeroSection = () => {
                 height={600}
                 className="w-full h-auto"
               />
-              {/* Overlay gradiente */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4F6A8B]/50 to-transparent"></div>
+              {/* Overlay lineare */}
+              <div className="absolute inset-0 bg-linear-to-t from-[#4F6A8B]/50 to-transparent"></div>
             </div>
 
             {/* Card flutuante */}
