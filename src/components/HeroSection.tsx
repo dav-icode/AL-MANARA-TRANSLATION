@@ -1,6 +1,7 @@
-import { ArrowRight, Award, Link } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
