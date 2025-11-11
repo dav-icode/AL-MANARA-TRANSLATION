@@ -18,8 +18,12 @@ import {
   ChevronDown,
   FileText, // ⚖️ Balança de juiz (Tradução Juramentada)
   Globe,
+  Home,
+  Info,
+  Mail,
   Menu, // 🔧 Chave de fenda (Tradução Técnica)
-  Scale, // 📄 Papel (Tradução Simples)
+  Scale,
+  Sparkles, // 📄 Papel (Tradução Simples)
   Wrench, // 🔧 Chave de fenda (Tradução Técnica)
 } from 'lucide-react';
 import Image from 'next/image';
@@ -202,10 +206,10 @@ export function Header() {
                   🇧🇷 Português
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer hover:bg-linear-to-r hover:from-[#4F6A8B]/5 hover:to-[#BFCC2E]/5 rounded-lg font-medium transition-all">
-                  🇸🇦 العربية
+                  🇲🇦 العربية
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer hover:bg-linear-to-r hover:from-[#4F6A8B]/5 hover:to-[#BFCC2E]/5 rounded-lg font-medium transition-all">
-                  🇬🇧 English
+                  🇺🇸 English
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer hover:bg-linear-to-r hover:from-[#4F6A8B]/5 hover:to-[#BFCC2E]/5 rounded-lg font-medium transition-all">
                   🇪🇸 Español
@@ -232,16 +236,16 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-[#4F6A8B] hover:bg-linear-to-r hover:from-[#4F6A8B]/5 hover:to-[#BFCC2E]/5 rounded-xl transition-all"
+                className="text-black border-none rounded-xl transition-all"
               >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[85vw] sm:w-[400px] bg-linear-to-br from-white via-[#F3EFB6]/5 to-white border-l-4 border-[#4F6A8B]"
+              className="bg-white/60 backdrop-blur-xl border-2 border-[#4F6A8B]/10 shadow-xl rounded-tl-none p-6"
             >
-              <SheetHeader className="border-b-2 border-linear-to-r from-[#4F6A8B] to-[#BFCC2E] pb-4">
+              <SheetHeader className="border-b-2 border-[#4F6A8B]/20 pb-4">
                 <SheetTitle className="text-left text-[#4F6A8B] text-2xl font-bold">
                   Menu
                 </SheetTitle>
@@ -254,7 +258,8 @@ export function Header() {
                       variant="ghost"
                       className="w-full justify-start text-[#4F6A8B] hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 text-base font-semibold rounded-xl transition-all"
                     >
-                      🏠 Início
+                      <Home className="h-5 w-5 mr-2" />
+                      Início
                     </Button>
                   </Link>
                 </SheetClose>
@@ -265,7 +270,8 @@ export function Header() {
                       variant="ghost"
                       className="w-full justify-start text-[#4F6A8B] hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 text-base font-semibold rounded-xl transition-all"
                     >
-                      ℹ️ Sobre Nós
+                      <Info className="h-5 w-5 mr-2" />
+                      Sobre Nós
                     </Button>
                   </Link>
                 </SheetClose>
@@ -284,7 +290,8 @@ export function Header() {
                           size="sm"
                           className="w-full justify-start text-gray-700 hover:text-[#4F6A8B] hover:bg-white/80 pl-6 rounded-lg font-medium transition-all"
                         >
-                          📄 Tradução Simples
+                          <FileText className="h-4 w-4 mr-2" />
+                          Tradução Simples
                         </Button>
                       </Link>
                     </SheetClose>
@@ -295,7 +302,8 @@ export function Header() {
                           size="sm"
                           className="w-full justify-start text-gray-700 hover:text-[#4F6A8B] hover:bg-white/80 pl-6 rounded-lg font-medium transition-all"
                         >
-                          🔧 Tradução Técnica
+                          <Wrench className="h-4 w-4 mr-2" />
+                          Tradução Técnica
                         </Button>
                       </Link>
                     </SheetClose>
@@ -306,7 +314,8 @@ export function Header() {
                           size="sm"
                           className="w-full justify-start text-gray-700 hover:text-[#4F6A8B] hover:bg-white/80 pl-6 rounded-lg font-medium transition-all"
                         >
-                          ⚖️ Tradução Juramentada
+                          <Scale className="h-4 w-4 mr-2" />
+                          Tradução Juramentada
                         </Button>
                       </Link>
                     </SheetClose>
@@ -317,7 +326,8 @@ export function Header() {
                           size="sm"
                           className="w-full justify-start text-gray-700 hover:text-[#BFCC2E] hover:bg-white/80 pl-6 rounded-lg font-medium transition-all border border-[#BFCC2E]/30"
                         >
-                          🌍 Idiomas Raros ✨
+                          <Globe className="h-4 w-4 mr-2" />
+                          Idiomas Raros ✨
                         </Button>
                       </Link>
                     </SheetClose>
@@ -330,7 +340,8 @@ export function Header() {
                       variant="ghost"
                       className="w-full justify-start text-[#4F6A8B] hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 text-base font-semibold rounded-xl transition-all"
                     >
-                      📧 Contato
+                      <Mail className="h-5 w-5 mr-2" />
+                      Contato
                     </Button>
                   </Link>
                 </SheetClose>
@@ -377,7 +388,8 @@ export function Header() {
                 <SheetClose asChild>
                   <Link href="/orcamento" className="mt-6">
                     <Button className="w-full bg-linear-to-r from-[#BFCC2E] to-[#a8b41f] hover:from-[#a8b41f] hover:to-[#BFCC2E] text-black font-bold text-base py-7 shadow-xl rounded-xl transition-all hover:scale-[1.02] relative overflow-hidden group">
-                      <span className="relative z-10">✨ Solicitar Orçamento</span>
+                      <Sparkles className="h-5 w-5 mr-2 relative z-10" />
+                      <span className="relative z-10">Solicitar Orçamento</span>
                       <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     </Button>
                   </Link>
