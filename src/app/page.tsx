@@ -1,8 +1,8 @@
 import { Header } from '@/components/Header';
-import CTAFinal from '../components/CTAFinal';
-import Differential from '../components/Differential';
-import HeroSection from '../components/HeroSection';
-import ServiceEmphasis from '../components/ServiceEmphasis';
+import CTAFinal from '../components/home/CTAFinal';
+import Differential from '../components/home/Differential';
+import HeroSection from '../components/home/HeroSection';
+import ServiceEmphasis from '../components/home/ServiceEmphasis';
 
 export default function Home() {
   return (
