@@ -20,7 +20,7 @@ export function WhatsAppButton() {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5511960229051';
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5511945540455';
   const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento de tradução.');
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
