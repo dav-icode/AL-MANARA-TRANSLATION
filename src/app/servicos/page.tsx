@@ -80,8 +80,8 @@ export default function ServicosPage() {
     <div className="min-h-screen bg-white -mt-16">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#4F6A8B] via-[#3d5570] to-[#2b3a4c] text-white overflow-hidden py-20 lg:py-32">
-        {/* Padrão geométrico árabe */}
-        <div className="absolute inset-0 opacity-5">
+        {/* Padrão geométrico árabe animado */}
+        <div className="absolute inset-0 opacity-5 animate-pulse-slow">
           <div
             className="absolute inset-0"
             style={{
@@ -90,18 +90,42 @@ export default function ServicosPage() {
           ></div>
         </div>
 
+        {/* Estrelas flutuantes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(7)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-float-slow opacity-10"
+              style={{
+                left: `${10 + i * 14}%`,
+                top: `${20 + (i % 3) * 25}%`,
+                animationDelay: `${i * 1.3}s`,
+                animationDuration: `${16 + i * 2}s`,
+              }}
+            >
+              <svg width="30" height="30" viewBox="0 0 30 30">
+                <path
+                  d="M15 3 L17 12 L25 14 L17 16 L15 24 L13 16 L5 14 L13 12 Z"
+                  fill="#BFCC2E"
+                  opacity="0.4"
+                />
+              </svg>
+            </div>
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-block">
-              <span className="bg-[#BFCC2E] text-black px-4 py-2 rounded-full text-sm font-semibold">
+              <span className="bg-[#BFCC2E] text-black px-4 py-2 rounded-full text-sm font-semibold font-[family-name:var(--font-cairo)]">
                 🌍 Nossos Serviços
               </span>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-amiri)]">
               Soluções Linguísticas para Todas as{' '}
               <span className="text-[#BFCC2E]">Necessidades</span>
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed font-[family-name:var(--font-amiri)] font-normal">
               Da tradução simples à juramentada, oferecemos excelência em todos os idiomas,
               incluindo os mais raros
             </p>
@@ -137,41 +161,63 @@ export default function ServicosPage() {
                   href={service.href}
                   className={`group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-t-4 ${
                     service.borderColor
-                  } ${service.highlight ? 'ring-4 ring-[#BFCC2E]/20' : ''}`}
+                  } ${
+                    service.highlight ? 'ring-4 ring-[#BFCC2E]/20' : ''
+                  } relative overflow-hidden`}
                 >
-                  {service.highlight && (
-                    <div className="inline-block mb-4">
-                      <span className="bg-gradient-to-r from-[#BFCC2E] to-[#a8b41f] text-black px-3 py-1 rounded-full text-xs font-bold">
-                        ✨ DESTAQUE
-                      </span>
-                    </div>
-                  )}
+                  {/* Brilho ao hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-[#BFCC2E]/5 group-hover:to-[#4F6A8B]/5 transition-all duration-500"></div>
 
-                  <div
-                    className={`bg-gradient-to-br ${service.color} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
-                  >
-                    <Icon
-                      className={`h-8 w-8 ${service.highlight ? 'text-black' : 'text-white'}`}
-                    />
+                  {/* Ornamento decorativo sutil */}
+                  <div className="absolute top-2 right-2 w-16 h-16 opacity-[0.03] pointer-events-none">
+                    <svg viewBox="0 0 60 60">
+                      <path
+                        d="M30 10 L35 25 L50 30 L35 35 L30 50 L25 35 L10 30 L25 25 Z"
+                        fill="#4F6A8B"
+                      />
+                    </svg>
                   </div>
 
-                  <h3 className="text-2xl font-heading font-bold text-[#4F6A8B] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <div className="relative z-10">
+                    {service.highlight && (
+                      <div className="inline-block mb-4">
+                        <span className="bg-gradient-to-r from-[#BFCC2E] to-[#a8b41f] text-black px-3 py-1 rounded-full text-xs font-bold animate-pulse font-[family-name:var(--font-cairo)]">
+                          ✨ DESTAQUE
+                        </span>
+                      </div>
+                    )}
 
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-600">
-                        <CheckCircle className="h-5 w-5 text-[#BFCC2E] flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    <div
+                      className={`bg-gradient-to-br ${service.color} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
+                    >
+                      <Icon
+                        className={`h-8 w-8 ${service.highlight ? 'text-black' : 'text-white'}`}
+                      />
+                    </div>
 
-                  <div className="flex items-center gap-2 text-[#4F6A8B] font-semibold group-hover:text-[#BFCC2E] transition-colors">
-                    Saiba mais
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                    <h3 className="text-2xl font-bold text-[#4F6A8B] mb-3 font-[family-name:var(--font-amiri)]">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 font-[family-name:var(--font-amiri)] font-normal">
+                      {service.description}
+                    </p>
+
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-gray-600 font-[family-name:var(--font-amiri)] font-normal"
+                        >
+                          <CheckCircle className="h-5 w-5 text-[#BFCC2E] flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex items-center gap-2 text-[#4F6A8B] font-semibold group-hover:text-[#BFCC2E] transition-colors font-[family-name:var(--font-cairo)]">
+                      Saiba mais
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               );
@@ -182,16 +228,27 @@ export default function ServicosPage() {
 
       {/* Por que escolher a Al Manara */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Padrão árabe sutil no fundo */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 35 L80 40 L55 45 L50 70 L45 45 L20 40 L45 35 Z' fill='%234F6A8B'/%3E%3C/svg%3E")`,
+              backgroundSize: '140px 140px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
         {/* Ornamentos */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#BFCC2E]/5 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#4F6A8B]/5 to-transparent rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#4F6A8B] mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#4F6A8B] mb-4 font-[family-name:var(--font-amiri)]">
               Por Que Escolher a Al Manara?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-[family-name:var(--font-amiri)] font-normal">
               Diferenciais que fazem da Al Manara a escolha certa para suas traduções
             </p>
           </div>
@@ -202,13 +259,22 @@ export default function ServicosPage() {
               return (
                 <div
                   key={index}
-                  className="text-center p-6 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group"
+                  className="text-center p-6 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className="bg-gradient-to-br from-[#4F6A8B] to-[#3d5570] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <Icon className="h-10 w-10 text-white" />
+                  {/* Brilho sutil ao hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#BFCC2E]/0 to-[#BFCC2E]/0 group-hover:from-[#BFCC2E]/5 group-hover:to-transparent transition-all duration-500"></div>
+
+                  <div className="relative z-10">
+                    <div className="bg-gradient-to-br from-[#4F6A8B] to-[#3d5570] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+                      <Icon className="h-10 w-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#4F6A8B] mb-3 font-[family-name:var(--font-amiri)]">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed font-[family-name:var(--font-amiri)] font-normal">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-[#4F6A8B] mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </div>
               );
             })}
@@ -218,7 +284,8 @@ export default function ServicosPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[#4F6A8B] to-[#2b3a4c] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        {/* Padrão árabe animado */}
+        <div className="absolute inset-0 opacity-10 animate-pulse-slow">
           <div
             className="absolute inset-0"
             style={{
@@ -227,29 +294,57 @@ export default function ServicosPage() {
           ></div>
         </div>
 
+        {/* Estrelas decorativas */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-float-slow opacity-10"
+              style={{
+                left: `${20 + i * 25}%`,
+                top: `${30 + (i % 2) * 40}%`,
+                animationDelay: `${i * 2}s`,
+                animationDuration: `${18 + i * 3}s`,
+              }}
+            >
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <path
+                  d="M20 5 L22 15 L30 17 L22 19 L20 27 L18 19 L10 17 L18 15 Z"
+                  fill="#BFCC2E"
+                  opacity="0.3"
+                />
+              </svg>
+            </div>
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold">
+            <h2 className="text-4xl lg:text-5xl font-bold font-[family-name:var(--font-amiri)]">
               Pronto para Começar seu Projeto?
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-gray-300 font-[family-name:var(--font-amiri)] font-normal">
               Solicite um orçamento gratuito e sem compromisso. Respondemos em até 2 horas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/orcamento">
                 <Button
                   size="lg"
-                  className="bg-[#BFCC2E] hover:bg-[#a8b41f] text-black font-bold text-lg px-10 py-7 shadow-2xl hover:scale-105 transition-all"
+                  className="bg-[#BFCC2E] hover:bg-[#a8b41f] text-black font-bold text-lg px-10 py-7 shadow-2xl hover:scale-105 transition-all relative overflow-hidden group font-[family-name:var(--font-cairo)]"
                 >
-                  Solicitar Orçamento Gratuito
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Solicitar Orçamento Gratuito
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
               <Link href="/contato">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#4F6A8B] font-semibold text-lg px-10 py-7 transition-all"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#4F6A8B] font-semibold text-lg px-10 py-7 transition-all font-[family-name:var(--font-cairo)]"
                 >
                   Falar com Especialista
                 </Button>

@@ -19,7 +19,7 @@ export default function IdiomasRarosPage() {
     { name: 'Letão', region: 'Letônia', speakers: '1.5 milhão' },
     { name: 'Estoniano', region: 'Estônia', speakers: '1.1 milhão' },
     { name: 'Maltês', region: 'Malta', speakers: '520 mil' },
-    { name: 'Islandês', region: 'Islândia', speakers: '350 mil' },
+    { name: 'Lituano', region: 'Lituânia', speakers: '3 milhões' },
     { name: 'Faroês', region: 'Ilhas Faroé', speakers: '66 mil' },
     { name: 'Galês', region: 'País de Gales', speakers: '750 mil' },
   ];
@@ -70,7 +70,8 @@ export default function IdiomasRarosPage() {
     <div className="min-h-screen bg-white -mt-16">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#BFCC2E] via-[#a8b41f] to-[#8b9a1a] text-black overflow-hidden py-20 lg:py-32">
-        <div className="absolute inset-0 opacity-10">
+        {/* Padrão geométrico árabe animado */}
+        <div className="absolute inset-0 opacity-10 animate-pulse-slow">
           <div
             className="absolute inset-0"
             style={{
@@ -79,52 +80,85 @@ export default function IdiomasRarosPage() {
           ></div>
         </div>
 
+        {/* Estrelas flutuantes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-float-slow opacity-15"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 3) * 25}%`,
+                animationDelay: `${i * 1.2}s`,
+                animationDuration: `${15 + i * 2}s`,
+              }}
+            >
+              <svg width="30" height="30" viewBox="0 0 30 30">
+                <path
+                  d="M15 3 L17 12 L25 14 L17 16 L15 24 L13 16 L5 14 L13 12 Z"
+                  fill="#4F6A8B"
+                  opacity="0.5"
+                />
+              </svg>
+            </div>
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="space-y-6">
               <div className="inline-block">
-                <span className="bg-black text-[#BFCC2E] px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                <span className="bg-black text-[#BFCC2E] px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 animate-pulse font-[family-name:var(--font-cairo)]">
                   <Sparkles className="h-4 w-4" />
                   SERVIÇO EXCLUSIVO
                 </span>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-heading font-bold leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight font-[family-name:var(--font-amiri)]">
                 Idiomas Raros, Nossa{' '}
                 <span className="text-white drop-shadow-lg">Especialidade</span>
               </h1>
-              <p className="text-xl text-gray-800 leading-relaxed">
+              <p className="text-xl text-gray-800 leading-relaxed font-[family-name:var(--font-amiri)] font-normal">
                 Acesso a tradutores nativos de idiomas de difícil acesso. Islandês, Georgiano, Letão
                 e dezenas de outros idiomas únicos.
               </p>
               <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <Star className="h-5 w-5 text-black" />
-                  <span className="text-sm font-semibold">Exclusividade</span>
+                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-black/20 transition-all group">
+                  <Star className="h-5 w-5 text-black group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-semibold font-[family-name:var(--font-cairo)]">
+                    Exclusividade
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <Users className="h-5 w-5 text-black" />
-                  <span className="text-sm font-semibold">Nativos Certificados</span>
+                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-black/20 transition-all group">
+                  <Users className="h-5 w-5 text-black group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-semibold font-[family-name:var(--font-cairo)]">
+                    Nativos Certificados
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                  <Globe className="h-5 w-5 text-black" />
-                  <span className="text-sm font-semibold">50+ Idiomas</span>
+                <div className="flex items-center gap-2 bg-black/10 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-black/20 transition-all group">
+                  <Globe className="h-5 w-5 text-black group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-semibold font-[family-name:var(--font-cairo)]">
+                    50+ Idiomas
+                  </span>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href="/orcamento">
                   <Button
                     size="lg"
-                    className="bg-black hover:bg-gray-900 text-[#BFCC2E] font-bold px-8 py-6"
+                    className="bg-black hover:bg-gray-900 text-[#BFCC2E] font-bold px-8 py-6 relative overflow-hidden group font-[family-name:var(--font-cairo)]"
                   >
-                    Solicitar Orçamento
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="relative z-10 flex items-center gap-2">
+                      Solicitar Orçamento
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#BFCC2E]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                   </Button>
                 </Link>
                 <Link href="/contato">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-2 border-black text-black hover:bg-black hover:text-[#BFCC2E]"
+                    className="border-2 border-black text-black hover:bg-black hover:text-[#BFCC2E] font-[family-name:var(--font-cairo)]"
                   >
                     Consultar Disponibilidade
                   </Button>
@@ -144,6 +178,15 @@ export default function IdiomasRarosPage() {
               </div>
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-black rounded-2xl -z-10 animate-pulse"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-white/50 rounded-full -z-10"></div>
+              {/* Ornamento decorativo */}
+              <div className="absolute top-1/2 -left-8 w-16 h-16 opacity-20">
+                <svg viewBox="0 0 60 60">
+                  <path
+                    d="M30 10 L35 25 L50 30 L35 35 L30 50 L25 35 L10 30 L25 25 Z"
+                    fill="#4F6A8B"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -165,13 +208,24 @@ export default function IdiomasRarosPage() {
       </section>
 
       {/* Idiomas Disponíveis */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Padrão árabe sutil no fundo */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 L45 30 L65 35 L45 40 L40 60 L35 40 L15 35 L35 30 Z' fill='%234F6A8B'/%3E%3C/svg%3E")`,
+              backgroundSize: '120px 120px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#4F6A8B] mb-4">
+            <h2 className="text-4xl font-bold text-[#4F6A8B] mb-4 font-[family-name:var(--font-amiri)]">
               Idiomas Raros que Oferecemos
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-[family-name:var(--font-amiri)] font-normal">
               Acesso exclusivo a tradutores nativos dos idiomas mais difíceis de encontrar
             </p>
           </div>
@@ -180,35 +234,43 @@ export default function IdiomasRarosPage() {
             {rareLanguages.map((lang, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#4F6A8B]/5 to-[#BFCC2E]/5 p-6 rounded-2xl border-2 border-[#BFCC2E]/30 hover:border-[#BFCC2E] hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-gradient-to-br from-[#4F6A8B]/5 to-[#BFCC2E]/5 p-6 rounded-2xl border-2 border-[#BFCC2E]/30 hover:border-[#BFCC2E] hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <Languages className="h-10 w-10 text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors" />
-                  <Star className="h-5 w-5 text-[#BFCC2E]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#4F6A8B] mb-2">{lang.name}</h3>
-                <div className="flex items-center gap-2 text-sm text-gray-600 mb-1">
-                  <MapPin className="h-4 w-4 text-[#BFCC2E]" />
-                  {lang.region}
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Users className="h-4 w-4 text-[#BFCC2E]" />
-                  {lang.speakers} falantes
+                {/* Brilho ao hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent group-hover:from-[#BFCC2E]/10 group-hover:to-transparent transition-all duration-500"></div>
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-4">
+                    <Languages className="h-10 w-10 text-[#4F6A8B] group-hover:text-[#BFCC2E] group-hover:scale-110 transition-all duration-300" />
+                    <Star className="h-5 w-5 text-[#BFCC2E] group-hover:scale-125 transition-transform" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#4F6A8B] mb-2 font-[family-name:var(--font-amiri)]">
+                    {lang.name}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-1 font-[family-name:var(--font-amiri)] font-normal">
+                    <MapPin className="h-4 w-4 text-[#BFCC2E]" />
+                    {lang.region}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-600 font-[family-name:var(--font-amiri)] font-normal">
+                    <Users className="h-4 w-4 text-[#BFCC2E]" />
+                    {lang.speakers} falantes
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              <strong className="text-[#4F6A8B]">E muitos outros idiomas!</strong> Entre em contato
-              para consultar disponibilidade de idiomas não listados.
+            <p className="text-gray-600 mb-6 font-[family-name:var(--font-amiri)] font-normal">
+              <strong className="text-[#4F6A8B] font-[family-name:var(--font-cairo)]">
+                E muitos outros idiomas!
+              </strong>{' '}
+              Entre em contato para consultar disponibilidade de idiomas não listados.
             </p>
             <Link href="/contato">
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-[#4F6A8B] text-[#4F6A8B] hover:bg-[#4F6A8B] hover:text-white"
+                className="border-2 border-[#4F6A8B] text-[#4F6A8B] hover:bg-[#4F6A8B] hover:text-white font-[family-name:var(--font-cairo)]"
               >
                 Consultar Outro Idioma
               </Button>
@@ -218,13 +280,24 @@ export default function IdiomasRarosPage() {
       </section>
 
       {/* Por Que Somos Únicos */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Padrão árabe no fundo */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 35 L80 40 L55 45 L50 70 L45 45 L20 40 L45 35 Z' fill='%234F6A8B'/%3E%3C/svg%3E")`,
+              backgroundSize: '140px 140px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#4F6A8B] mb-4">
+            <h2 className="text-4xl font-bold text-[#4F6A8B] mb-4 font-[family-name:var(--font-amiri)]">
               Por Que Somos Especialistas?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-[family-name:var(--font-amiri)] font-normal">
               Nossa rede global de tradutores nativos nos torna únicos no mercado brasileiro
             </p>
           </div>
@@ -237,11 +310,15 @@ export default function IdiomasRarosPage() {
                   key={index}
                   className="text-center p-6 rounded-2xl hover:bg-white hover:shadow-xl transition-all group"
                 >
-                  <div className="bg-gradient-to-br from-[#BFCC2E] to-[#a8b41f] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all">
+                  <div className="bg-gradient-to-br from-[#BFCC2E] to-[#a8b41f] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
                     <Icon className="h-10 w-10 text-black" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#4F6A8B] mb-3">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="text-xl font-bold text-[#4F6A8B] mb-3 font-[family-name:var(--font-amiri)]">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 font-[family-name:var(--font-amiri)] font-normal">
+                    {item.description}
+                  </p>
                 </div>
               );
             })}
@@ -250,10 +327,21 @@ export default function IdiomasRarosPage() {
       </section>
 
       {/* Casos de Uso */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Padrão árabe sutil */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 L45 30 L65 35 L45 40 L40 60 L35 40 L15 35 L35 30 Z' fill='%234F6A8B'/%3E%3C/svg%3E")`,
+              backgroundSize: '120px 120px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#4F6A8B] mb-4">
+            <h2 className="text-4xl font-bold text-[#4F6A8B] mb-4 font-[family-name:var(--font-amiri)]">
               Quando Você Precisa de Idiomas Raros?
             </h2>
           </div>
@@ -262,13 +350,19 @@ export default function IdiomasRarosPage() {
             {useCases.map((useCase, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#4F6A8B]/5 to-[#BFCC2E]/5 p-8 rounded-2xl border-l-4 border-[#BFCC2E] hover:shadow-lg transition-all"
+                className="bg-gradient-to-br from-[#4F6A8B]/5 to-[#BFCC2E]/5 p-8 rounded-2xl border-l-4 border-[#BFCC2E] hover:shadow-lg transition-all group relative overflow-hidden"
               >
-                <h3 className="text-2xl font-bold text-[#4F6A8B] mb-3 flex items-center gap-2">
-                  <CheckCircle className="h-6 w-6 text-[#BFCC2E]" />
-                  {useCase.title}
-                </h3>
-                <p className="text-gray-600">{useCase.description}</p>
+                {/* Brilho sutil */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent group-hover:from-[#BFCC2E]/10 group-hover:to-transparent transition-all duration-500"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-[#4F6A8B] mb-3 flex items-center gap-2 font-[family-name:var(--font-amiri)]">
+                    <CheckCircle className="h-6 w-6 text-[#BFCC2E] group-hover:scale-110 transition-transform" />
+                    {useCase.title}
+                  </h3>
+                  <p className="text-gray-600 font-[family-name:var(--font-amiri)] font-normal">
+                    {useCase.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -276,52 +370,88 @@ export default function IdiomasRarosPage() {
       </section>
 
       {/* Depoimento */}
-      <section className="py-20 bg-gradient-to-br from-[#4F6A8B] to-[#2b3a4c] text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-[#4F6A8B] to-[#2b3a4c] text-white relative overflow-hidden">
+        {/* Padrão árabe animado */}
+        <div className="absolute inset-0 opacity-10 animate-pulse-slow">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 35 L80 40 L55 45 L50 70 L45 45 L20 40 L45 35 Z' fill='%23BFCC2E'/%3E%3C/svg%3E")`,
+              backgroundSize: '150px 150px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-8 w-8 text-[#BFCC2E] fill-[#BFCC2E]" />
+                <Star
+                  key={i}
+                  className="h-8 w-8 text-[#BFCC2E] fill-[#BFCC2E] hover:scale-125 transition-transform"
+                />
               ))}
             </div>
-            <blockquote className="text-2xl font-medium mb-6 italic">
+            <blockquote className="text-2xl font-medium mb-6 italic font-[family-name:var(--font-amiri)] font-normal">
               <p>
                 "Precisava traduzir documentos do Islandês para Português e a Al Manara foi a única
                 empresa que conseguiu me atender com qualidade e rapidez. Tradutor nativo, excelente
                 comunicação. Recomendo!"
               </p>
             </blockquote>
-            <p className="text-[#BFCC2E] font-semibold">— Maria Silva, Cliente Satisfeita</p>
+            <p className="text-[#BFCC2E] font-semibold font-[family-name:var(--font-cairo)]">
+              — Maria Silva, Cliente Satisfeita
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8 bg-gradient-to-br from-[#BFCC2E]/10 to-[#4F6A8B]/10 p-12 rounded-3xl border-2 border-[#BFCC2E]">
-            <Sparkles className="h-16 w-16 text-[#BFCC2E] mx-auto" />
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#4F6A8B]">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Padrão árabe no fundo */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <div
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 35 L80 40 L55 45 L50 70 L45 45 L20 40 L45 35 Z' fill='%234F6A8B'/%3E%3C/svg%3E")`,
+              backgroundSize: '150px 150px',
+            }}
+            className="absolute inset-0"
+          ></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8 bg-gradient-to-br from-[#BFCC2E]/10 to-[#4F6A8B]/10 p-12 rounded-3xl border-2 border-[#BFCC2E] relative overflow-hidden">
+            {/* Mini estrela decorativa */}
+            <div className="absolute top-4 right-4 w-12 h-12 opacity-10">
+              <svg viewBox="0 0 40 40">
+                <path d="M20 5 L22 15 L30 17 L22 19 L20 27 L18 19 L10 17 L18 15 Z" fill="#BFCC2E" />
+              </svg>
+            </div>
+            <Sparkles className="h-16 w-16 text-[#BFCC2E] mx-auto animate-pulse" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#4F6A8B] font-[family-name:var(--font-amiri)]">
               Precisa de um Idioma Raro?
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-[family-name:var(--font-amiri)] font-normal">
               Consulte disponibilidade e receba um orçamento personalizado em até 2 horas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/orcamento">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#BFCC2E] to-[#a8b41f] hover:from-[#a8b41f] hover:to-[#BFCC2E] text-black font-bold text-lg px-10 py-7"
+                  className="bg-gradient-to-r from-[#BFCC2E] to-[#a8b41f] hover:from-[#a8b41f] hover:to-[#BFCC2E] text-black font-bold text-lg px-10 py-7 relative overflow-hidden group font-[family-name:var(--font-cairo)]"
                 >
-                  Solicitar Orçamento Agora
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Solicitar Orçamento Agora
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
               </Link>
               <Link href="/contato">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-[#4F6A8B] text-[#4F6A8B] hover:bg-[#4F6A8B] hover:text-white font-semibold text-lg px-10 py-7"
+                  className="border-2 border-[#4F6A8B] text-[#4F6A8B] hover:bg-[#4F6A8B] hover:text-white font-semibold text-lg px-10 py-7 font-[family-name:var(--font-cairo)]"
                 >
                   Consultar Disponibilidade
                 </Button>
