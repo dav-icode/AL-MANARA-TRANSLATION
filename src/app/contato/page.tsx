@@ -139,7 +139,7 @@ export default function ContatoPage() {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* WhatsApp */}
             <Link
-              href="https://wa.me/5511960229051?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+              href="https://wa.me/5511945540455?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#25D366] relative overflow-hidden"
@@ -157,7 +157,7 @@ export default function ContatoPage() {
                   Resposta imediata
                 </p>
                 <p className="text-[#4F6A8B] font-semibold group-hover:text-[#25D366] transition-colors font-[family-name:var(--font-cairo)]">
-                  +55 (11) 96022-9051
+                  +55 (11) 94554-0455
                 </p>
               </div>
             </Link>
@@ -186,7 +186,7 @@ export default function ContatoPage() {
 
             {/* Telefone */}
             <Link
-              href="tel:+5511960229051"
+              href="tel:+5511945540455"
               className="group bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-[#4F6A8B] relative overflow-hidden"
             >
               <div className="absolute inset-0 bg-linear-to-br from-[#4F6A8B]/0 to-[#4F6A8B]/0 group-hover:from-[#4F6A8B]/5 group-hover:to-[#3d5570]/5 transition-all duration-500"></div>
@@ -201,7 +201,7 @@ export default function ContatoPage() {
                   Atendimento comercial
                 </p>
                 <p className="text-[#4F6A8B] font-semibold group-hover:text-[#BFCC2E] transition-colors font-[family-name:var(--font-cairo)]">
-                  +55 (11) 96022-9051
+                  +55 (11) 94554-0455
                 </p>
               </div>
             </Link>
@@ -441,7 +441,7 @@ export default function ContatoPage() {
                   Para atendimento mais rápido, entre em contato via WhatsApp! Respondemos em
                   minutos durante o horário comercial.
                 </p>
-                <Link href="https://wa.me/5511960229051" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/5511945540455" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold relative overflow-hidden group font-[family-name:var(--font-cairo)]">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <MessageCircle className="h-5 w-5 group-hover:scale-110 transition-transform" />

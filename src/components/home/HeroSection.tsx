@@ -69,7 +69,7 @@ export const HeroSection = () => {
               <Link href="/orcamento">
                 <Button
                   size="lg"
-                  className="bg-[#BFCC2E] hover:bg-[#a8b41f] text-black font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-[family-name:var(--font-cairo)]"
+                  className="bg-[#BFCC2E] hover:bg-[#a8b41f] text-black font-bold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all hover:scale-102 font-[family-name:var(--font-cairo)]"
                 >
                   Solicitar Orçamento Grátis
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -78,9 +78,9 @@ export const HeroSection = () => {
 
               <Link href="/sobre">
                 <Button
-                  size="lg"
+                  size="sm"
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#4F6A8B] font-semibold text-lg px-8 py-6 transition-all font-[family-name:var(--font-cairo)]"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#4F6A8B] font-semibold text-lg px-6 py-6 transition-all font-[family-name:var(--font-cairo)]"
                 >
                   Conheça Nossa História
                 </Button>

@@ -175,7 +175,7 @@ export async function POST(request: NextRequest) {
 
               <p>Enquanto isso, você pode entrar em contato via WhatsApp para atendimento mais rápido:</p>
               <div style="text-align: center;">
-                <a href="https://wa.me/5511960229051?text=Olá!%20Acabei%20de%20solicitar%20um%20orçamento" class="button">
+                <a href="https://wa.me/5511945540455?text=Olá!%20Acabei%20de%20solicitar%20um%20orçamento" class="button">
                   📱 Falar no WhatsApp
                 </a>
               </div>
@@ -184,7 +184,7 @@ export async function POST(request: NextRequest) {
                 Atenciosamente,<br>
                 <strong style="color: #4F6A8B;">Equipe Al Manara</strong><br>
                 📧 contato@almanaratranslation.com.br<br>
-                📱 +55 (11) 96022-9051
+                📱 +55 (11) 94554-0455
               </p>
             </div>
           </div>

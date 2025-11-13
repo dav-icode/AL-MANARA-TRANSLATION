@@ -288,8 +288,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-300 group font-[family-name:var(--font-amiri)] font-normal">
                 <Phone className="h-5 w-5 text-[#BFCC2E] flex shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-                <Link href="tel:+5511960229051" className="hover:text-[#BFCC2E] transition-colors">
-                  +55 (11) 96022-9051
+                <Link href="tel:+5511945540455" className="hover:text-[#BFCC2E] transition-colors">
+                  +55 (11) 94554-0455
                 </Link>
               </li>
               <li className="flex items-center gap-3 text-gray-300 group font-[family-name:var(--font-amiri)] font-normal">
