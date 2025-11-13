@@ -143,7 +143,7 @@ export default function OrcamentoPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-white -mt-16">
       {/* Hero Section */}
       <section className="relative bg-linear-to-br from-[#4F6A8B] via-[#3d5570] to-[#2b3a4c] text-white py-20">
         <div className="absolute inset-0 opacity-5">

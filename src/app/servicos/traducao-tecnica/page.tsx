@@ -67,7 +67,7 @@ export default function TraducaoTecnicaPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white -mt-16">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#4F6A8B] via-[#3d5570] to-[#2b3a4c] text-white overflow-hidden py-20 lg:py-32">
         <div className="absolute inset-0 opacity-5">

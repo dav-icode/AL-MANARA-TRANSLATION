@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cinzel, Montserrat } from 'next/font/google';
 import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import './globals.css';
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${montserrat.variable} ${cinzel.variable} antialiased font-sans`}>
+        <Header />
         {children}
         <WhatsAppButton />
         <Footer />

@@ -67,7 +67,7 @@ export default function IdiomasRarosPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white -mt-16">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#BFCC2E] via-[#a8b41f] to-[#8b9a1a] text-black overflow-hidden py-20 lg:py-32">
         <div className="absolute inset-0 opacity-10">
