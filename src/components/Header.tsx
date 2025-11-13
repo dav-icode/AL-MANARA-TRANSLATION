@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Sheet, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ChevronDown, FileText, Globe, Menu, Scale, Sparkles, Wrench } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -329,7 +329,177 @@ export function Header() {
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#BFCC2E]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
               </Button>
             </SheetTrigger>
-            {/* ... resto do mobile menu igual ... */}
+
+            <SheetContent
+              side="right"
+              className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-2xl border-l-2 border-[#4F6A8B]/20 p-0 overflow-y-auto"
+            >
+              {/* Header do Menu Mobile com padrão árabe */}
+              <div className="relative p-6 border-b-2 border-[#4F6A8B]/10 bg-linear-to-br from-white to-[#F3EFB6]/20">
+                {/* Padrão árabe sutil */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                  <div
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L22 15 L30 17 L22 19 L20 27 L18 19 L10 17 L18 15 Z' fill='%23BFCC2E'/%3E%3C/svg%3E")`,
+                      backgroundSize: '60px 60px',
+                    }}
+                    className="absolute inset-0"
+                  ></div>
+                </div>
+
+                <Image
+                  src="/LOGO-AL-MANARA-SERVIÇOS-LINGUÍSTICOS-SEM-FUNDO-02.png"
+                  alt="Al Manara"
+                  width={150}
+                  height={45}
+                  className="relative z-10 animate-fade-in-up"
+                />
+              </div>
+
+              {/* Menu Items */}
+              <div className="flex flex-col gap-2 p-6">
+                <Link href="/" className="group">
+                  <div className="flex items-center gap-3 p-4 rounded-xl hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#BFCC2E]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10">
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-[#4F6A8B] font-bold group-hover:text-[#BFCC2E] transition-colors relative z-10 font-[family-name:var(--font-cairo)]">
+                      Início
+                    </span>
+                  </div>
+                </Link>
+
+                <Link href="/sobre" className="group">
+                  <div className="flex items-center gap-3 p-4 rounded-xl hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#BFCC2E]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10">
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-[#4F6A8B] font-bold group-hover:text-[#BFCC2E] transition-colors relative z-10 font-[family-name:var(--font-cairo)]">
+                      Sobre Nós
+                    </span>
+                  </div>
+                </Link>
+
+                {/* Serviços - Expandível */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-linear-to-r from-[#4F6A8B]/5 to-[#BFCC2E]/5 border-2 border-[#BFCC2E]/20">
+                    <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-white" />
+                    </div>
+                    <span className="text-[#4F6A8B] font-bold font-[family-name:var(--font-cairo)]">
+                      Serviços
+                    </span>
+                  </div>
+
+                  <div className="ml-4 space-y-2 border-l-2 border-[#BFCC2E]/30 pl-4">
+                    <Link href="/servicos/traducao-simples" className="group block">
+                      <div className="flex items-center gap-2 p-3 rounded-lg hover:bg-[#4F6A8B]/5 transition-all duration-300">
+                        <FileText className="w-4 h-4 text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors" />
+                        <span className="text-sm text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors font-[family-name:var(--font-amiri)]">
+                          Tradução Simples
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link href="/servicos/traducao-tecnica" className="group block">
+                      <div className="flex items-center gap-2 p-3 rounded-lg hover:bg-[#4F6A8B]/5 transition-all duration-300">
+                        <Wrench className="w-4 h-4 text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors" />
+                        <span className="text-sm text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors font-[family-name:var(--font-amiri)]">
+                          Tradução Técnica
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link href="/servicos/traducao-juramentada" className="group block">
+                      <div className="flex items-center gap-2 p-3 rounded-lg hover:bg-[#4F6A8B]/5 transition-all duration-300">
+                        <Scale className="w-4 h-4 text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors" />
+                        <span className="text-sm text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors font-[family-name:var(--font-amiri)]">
+                          Tradução Juramentada
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link href="/servicos/idiomas-raros" className="group block">
+                      <div className="flex items-center gap-2 p-3 rounded-lg hover:bg-linear-to-r hover:from-[#BFCC2E]/10 hover:to-[#F3EFB6]/20 transition-all duration-300 border border-[#BFCC2E]/30">
+                        <Globe className="w-4 h-4 text-[#BFCC2E] animate-pulse" />
+                        <span className="text-sm text-[#4F6A8B] group-hover:text-[#BFCC2E] transition-colors font-bold font-[family-name:var(--font-amiri)]">
+                          ✨ Idiomas Raros
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+
+                <Link href="/contato" className="group">
+                  <div className="flex items-center gap-3 p-4 rounded-xl hover:bg-linear-to-r hover:from-[#4F6A8B]/10 hover:to-[#BFCC2E]/10 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-[#BFCC2E]/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#4F6A8B] to-[#3d5570] flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10">
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-[#4F6A8B] font-bold group-hover:text-[#BFCC2E] transition-colors relative z-10 font-[family-name:var(--font-cairo)]">
+                      Contato
+                    </span>
+                  </div>
+                </Link>
+              </div>
+
+              {/* CTA no final do menu mobile */}
+              <div className="p-6 border-t-2 border-[#4F6A8B]/10 bg-linear-to-br from-white to-[#F3EFB6]/10">
+                <Link href="/orcamento">
+                  <Button className="w-full bg-linear-to-r from-[#BFCC2E] to-[#a8b41f] hover:from-[#a8b41f] hover:to-[#BFCC2E] text-black font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl py-6 relative overflow-hidden group font-[family-name:var(--font-cairo)]">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <Sparkles className="h-5 w-5 group-hover:rotate-180 transition-transform duration-500" />
+                      Solicitar Orçamento Grátis
+                    </span>
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  </Button>
+                </Link>
+
+                {/* Seletor de Idioma Mobile */}
+                <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500 font-[family-name:var(--font-cairo)]">
+                  <Globe className="w-4 h-4" />
+                  <span>🇧🇷 PT | 🇲🇦 AR | 🇺🇸 EN | 🇪🇸 ES | 🇫🇷 FR</span>
+                </div>
+              </div>
+            </SheetContent>
           </Sheet>
         </div>
       </nav>

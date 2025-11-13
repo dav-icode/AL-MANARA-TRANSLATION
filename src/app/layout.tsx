@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Amiri, Cairo, Cinzel, Montserrat } from 'next/font/google';
 import { Footer } from '../components/Footer';
+
 import { Header } from '../components/Header';
 import './globals.css';
 
@@ -16,7 +17,6 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-// ✅ ADICIONAR FONTES ÁRABES
 const amiri = Amiri({
   weight: ['400', '700'],
   subsets: ['latin', 'arabic'],

@@ -158,7 +158,8 @@ export default function SobrePage() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#BFCC2E] rounded-full"></span>
-                  <strong>Qualidade:</strong> Excelência em cada entrega
+                  <strong>Qualidade:</strong>
+                  Excelência em cada entrega
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#BFCC2E] rounded-full"></span>
