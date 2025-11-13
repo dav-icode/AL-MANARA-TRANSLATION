@@ -119,6 +119,7 @@ export function Footer() {
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
           {/* Coluna 1: Logo e Descrição */}
           <div className="space-y-6">
             <div className="relative group">
@@ -138,21 +139,21 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/almanaraservicos"
                 className="bg-white/10 hover:bg-[#BFCC2E] hover:text-black p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6 group relative"
               >
                 <Facebook className="h-5 w-5" />
                 <div className="absolute inset-0 bg-[#BFCC2E] opacity-0 group-hover:opacity-20 rounded-lg blur-xl transition-opacity duration-300"></div>
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/almanaraservicoslinguisticos/"
                 className="bg-white/10 hover:bg-[#BFCC2E] hover:text-black p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6 group relative"
               >
                 <Instagram className="h-5 w-5" />
                 <div className="absolute inset-0 bg-[#BFCC2E] opacity-0 group-hover:opacity-20 rounded-lg blur-xl transition-opacity duration-300"></div>
               </Link>
               <Link
-                href="#"
+                href="https://br.linkedin.com/company/almanaratranslation"
                 className="bg-white/10 hover:bg-[#BFCC2E] hover:text-black p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6 group relative"
               >
                 <Linkedin className="h-5 w-5" />
@@ -332,6 +333,7 @@ export function Footer() {
             </Link>
           </p>
         </div>
+        
       </div>
     </footer>
   );
